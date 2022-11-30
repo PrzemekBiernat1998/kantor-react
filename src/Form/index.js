@@ -1,3 +1,6 @@
+import React, { useState } from "react";
+import { currencies } from "./currencies";
+
 import "./style.css"
 
 const Form = ()=> (
@@ -24,10 +27,10 @@ const Form = ()=> (
             <label><span className="form__labelText">Wynik: <strong
                         className="js-exchangeResult">N/A</strong></span></label>
         </p>
-        <p className="paragraph"><b>Aktualne kursy walut na dzien 07.10.2022 według NBP</b></p>
-        <p className="paragraph"><b>EURO (EUR): 4.8606</b></p>
-        <p className="paragraph"><b>Dolar (USD):4.9588</b> </p>
-        <p className="paragraph"><b>Korona czeska (CZK): 0.1982</b></p>
+        <p className="paragraph"><b>Aktualne kursy walut na dzien 01.11.2022 według NBP</b></p>
+        <p className="paragraph"><b>EURO (EUR): 4.6684</b></p>
+        <p className="paragraph"><b>Dolar (USD):4.5066</b> </p>
+        <p className="paragraph"><b>Korona czeska (CZK): 0.1916</b></p>
         <p className="paragraph"><button type="reset" className="paragraph__button">Wyczyść</button></p>
     </fieldset>
 </form>
