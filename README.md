@@ -4,7 +4,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 The application will calculate currency.
 ## Demo
 https://przemekbiernat1998.github.io/kantor-react/
-##Previev
+## Previev
 ![Preview](https://github.com/PrzemekBiernat1998/kantor-react/blob/master/src/Image/readme.jpg)
 
 ## Technologies
