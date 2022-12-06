@@ -10,7 +10,7 @@ const Form = () => {
 
     const rate = currencies.find(({ short }) => short === currency).rate;
 
-  const countResult = (currency, amount) => {
+  const countResult = () => {
     setResult({
     currency,
       startAmount: +amount,
