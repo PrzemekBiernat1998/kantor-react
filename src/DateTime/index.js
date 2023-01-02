@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import "./style.css";
+import { StyledDate } from "./styled";
 
 const CurrentDate = () => {
     const[newDate, setNewDate] = useState(new Date());
@@ -13,7 +13,7 @@ const CurrentDate = () => {
         };
     }, []);
     return (
-        <div className="date">
+        <StyledDate>
             Aktualna data to {" "}
             {newDate.toLocaleString(undefined, {
                 weekday: "long",
@@ -23,7 +23,7 @@ const CurrentDate = () => {
                 day:"numeric",
                 month: "long"
             })}
-        </div>
+        </StyledDate>
     );
 };
 export default CurrentDate;
