@@ -1,25 +1,10 @@
-html {
-    box-sizing: border-box;
-}
 
-*,
-::after,
-::before {
-    box-sizing: inherit;
-}
 
-.body {
-    font-family: 'Lato', sans-serif;
-    background-color: #eee;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 15px;
-    background-image: url(../Image/background.png);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-}
 
+.form{
+    margin: 10px;
+    border-radius: 20px;
+}
 .form__fieldset {
     padding: 30px;
     max-width: 900px;
@@ -50,16 +35,20 @@ html {
     color: rgb(75, 0, 141);
 }
 
+
+
 .form__button {
     cursor: pointer;
     background-color: rgb(182, 182, 182);
     color: rgb(75, 0, 141);
     border: 1px solid rgb(75, 0, 141);
     border-radius: 3px;
+    width: 100px;
+    height: 40px;
 }
 
-.form__button:active {
-    background-color: rgb(0, 0%, 43%);
+.form__button:active{
+    background-color: rgb(234, 0, 255);
 }
 
 .form__paragraph {
@@ -71,18 +60,4 @@ html {
     font-size: 14px;
     color: rgb(348, 100%, 18%);
     color: rgb(75, 0, 141);
-}
-
-.paragraph__button {
-    cursor: pointer;
-    background-color: rgb(182, 182, 182);
-    color: rgb(75, 0, 141);
-    border: 1px solid rgb(75, 0, 141);
-    border-radius: 3px;
-    text-align: center;
-    margin: auto;
-}
-
-.paragraph__button:hover {
-    background-color: rgb(0, 0%, 43%);
 }
