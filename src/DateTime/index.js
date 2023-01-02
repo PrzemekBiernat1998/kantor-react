@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { StyledDate } from "./styled";
 
-const CurrentDate = () => {
+const useCurrentDate = () => {
     const[newDate, setNewDate] = useState(new Date());
 
     useEffect(() => {
@@ -26,4 +26,4 @@ const CurrentDate = () => {
         </StyledDate>
     );
 };
-export default CurrentDate;
+export default useCurrentDate;
