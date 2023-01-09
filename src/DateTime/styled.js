@@ -1,12 +1,12 @@
 import styled from "styled-components";
 
-export const StyledDate = styled.p`
-display: flex;
-text-align: right;
-justify-content:space-around;
-justify-items: auto;
-padding-left: 500px;
-margin: 0 10px 10px;
-font-weight: bold;
-color: rgb(75, 0, 141);
+export const StyledDate = styled.div`
+  padding: 5px;
+  margin: auto;
+  margin-top: 5px;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: bold;
+  width: 300px;
+  color: rgb(75, 0, 141);
 `;
