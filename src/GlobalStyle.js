@@ -22,6 +22,7 @@ body {
   background-image: url("${background}");
   background-repeat: no-repeat;
   background-size: cover;
+  min-height: 150vh;
 }
 
 code {
