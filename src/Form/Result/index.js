@@ -6,7 +6,7 @@ export const Result = ({ result }) => (
             <>
                 {result.startAmount.toFixed(2)} &nbsp;PLN&nbsp;=&nbsp;
                 <strong>
-                    {result.finalAmount.toFixed(2)}&nbsp;{result.currency}
+                    {result.finalAmount.toFixed(2)}&nbsp;{result.currencyOptions}
                 </strong>
             </>
         )}
