@@ -10,7 +10,6 @@ const useRatesData = () => {
     const fetchRates = async () => {
       try {
         const response = await axios.get("https://api.exchangerate.host/latest?base=PLN");
- //zarobic tu fetch albo axiosa beaz asycna
         setRatesData({
           state: "success",
           rates: response.data.rates,
