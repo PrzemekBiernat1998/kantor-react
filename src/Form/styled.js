@@ -64,3 +64,9 @@ export const ParagraphDown = styled.p`
     color: rgb(348, 100%, 18%);
     color: rgb(75, 0, 141);
 `;
+export const Failure = styled.p`
+    color: white;
+    background-color: red;
+`;
+export const Footer = styled.div`
+    color: white;`

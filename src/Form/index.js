@@ -1,59 +1,56 @@
-import React, { useState, useEffect} from "react";
+import React, { useState } from "react";
 import { Result } from "./Result";
+import useRatesData from "./useRatesData";
 import { 
     StyledForm,
     FieldSet,
     Legend,
     Input,
     Select,
+    Failure,
     TextSpan,
     Button,
     Paragraph,
-    ParagraphDown,
+    Footer,
 } from "./styled";
-
-const rates_url = 'https://api.exchangerate.host/latest';
+import LoadingScreen from "../Loading";
 
 const Form = () => {
-    const [currencyOptions, setCurrencyOptions] = useState([]);
+    const [currency, setCurrency] = useState();
     const [amount, setAmount] = useState("");
     const [result, setResult] = useState();
-    const [exchangeRate, setExchangeRate] = useState();
+    
+    const ratesData = useRatesData();
 
+    const countResult = (currency, amount) => {
+        const rate = ratesData.rates[currency];
 
-    const countResult = () => {
         setResult({
+            currency,
             startAmount: +amount,
-            finalAmount: amount * exchangeRate
+            finalAmount: amount * rate,
         });
     };
-
-    
-
-    useEffect (() => {
-        fetch(rates_url)
-        .then(response => response.json())
-        .then(data => {
-            const firstCurrency = Object.keys(data.rates)[0];
-            setCurrencyOptions([data.base, ...Object.keys(data.rates)]);
-            setAmount(data.base);
-            setResult(firstCurrency);
-            setExchangeRate(data.rates[0]);
-        })
-    }, []);
-
-
     const onFormSubmit = (event) => {
         event.preventDefault();
-        countResult();
+        countResult(currency, amount);
     };
-
-    return(<StyledForm
-    onSubmit={onFormSubmit}>
-        
+    return(
+    <StyledForm onSubmit={onFormSubmit}>
+        <Legend>Kalkulator walut</Legend>
         <FieldSet>
-            <Legend>Kalkulator walut</Legend>
-            <Paragraph>
+            {ratesData.state === "loading"
+            ? (
+                <LoadingScreen>Chwileczke...<br>Ładuję aktualne kursy walut z Europejskiego Banku Centralnego</br></LoadingScreen>
+            )
+            : (
+                ratesData.state === "error" ? (
+                    <Failure>
+                        Kursy walut nie pobrały się. Sprawdź swoje połączenie internetowe
+                    </Failure>
+                ) : (
+                    <>
+                    <Paragraph>
                     <label>
                         <TextSpan>Kwota do przeliczenia:</TextSpan>
                         <Input
@@ -68,10 +65,19 @@ const Form = () => {
                 <Paragraph>
                     <label>
                         <TextSpan>Waluta:</TextSpan>
-                        <Select>
-                            {currencyOptions.map(option => (
-                                <option key={option} value={option}>{option}</option>
-                            ))}
+                        <Select 
+                        value={currency}
+                        onChange={({ target }) => setCurrency(target.value)}
+                        >
+                            {Object.keys(ratesData.rates).map(((currency) => (
+                                <option
+                                key={currency}
+                                value={currency}
+                            >
+                                {currency}
+                            </option>
+                            )))}
+                            
                         </Select>
                     </label>
                 </Paragraph>
@@ -80,11 +86,17 @@ const Form = () => {
                 <Result result={result} />
                 <TextSpan><span className="form__labelText">  </span></TextSpan>
                 </Paragraph>
-                <ParagraphDown>Aktualne kursy walut na dzien 01.11.2022 według NBP</ParagraphDown>
-                <ParagraphDown>EURO (EUR): 4.668</ParagraphDown>
-                <ParagraphDown>Dolar (USD):4.5066</ParagraphDown>
-                <ParagraphDown>Korona czeska (CZK): 0.1916</ParagraphDown>
+                </>
+                )
+            )}
+            
         </FieldSet>
+        
+            <div>
+                <Footer>
+                    Kursy aktualne na dzień {ratesData.date}
+                </Footer>
+            </div>
     </StyledForm>
     );
 };
