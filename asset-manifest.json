@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.js": "/kantor-react/static/js/main.60876a9a.js",
+    "main.js": "/kantor-react/static/js/main.d0a7861b.js",
     "static/js/787.509e3ee3.chunk.js": "/kantor-react/static/js/787.509e3ee3.chunk.js",
     "static/media/background.png": "/kantor-react/static/media/background.4b071602fd038c9b33e5.png",
     "index.html": "/kantor-react/index.html",
-    "main.60876a9a.js.map": "/kantor-react/static/js/main.60876a9a.js.map",
+    "main.d0a7861b.js.map": "/kantor-react/static/js/main.d0a7861b.js.map",
     "787.509e3ee3.chunk.js.map": "/kantor-react/static/js/787.509e3ee3.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.60876a9a.js"
+    "static/js/main.d0a7861b.js"
   ]
 }
