@@ -1,7 +1,8 @@
 # Currency converter React App
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 ## Description
-The application will calculate currency.
+The application will calculate currency. 
+Current exchange rates are taken from the European Central Bank
 ## Demo
 https://przemekbiernat1998.github.io/kantor-react/
 ## Previev
