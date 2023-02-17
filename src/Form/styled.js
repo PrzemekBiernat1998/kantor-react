@@ -14,10 +14,16 @@ export const FieldSet = styled.fieldset`
 
 export const Legend = styled.legend`
     color: hsl(348, 100%, 18%);
-    background-color: hsl(0, 0%, 78%);
+    background: #ffe8c7 ;
+    border: 1px solid rgb(75, 0, 141);
     border-radius: 5px;
     padding: 25px;
-    text-align: right;
+    margin-left: 180px;
+    margin-bottom: 10px;
+    text-align: center;
+    
+
+    
 `;
 
 export const Input = styled.input`
@@ -65,8 +71,11 @@ export const ParagraphDown = styled.p`
     color: rgb(75, 0, 141);
 `;
 export const Failure = styled.p`
-    color: white;
+    color: back;
     background-color: red;
 `;
-export const Footer = styled.div`
-    color: white;`
+export const Loading = styled.p`
+    color: black;
+    background: #ffe8c7 ;
+    text-align: center;
+`;
