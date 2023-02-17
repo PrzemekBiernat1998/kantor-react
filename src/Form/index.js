@@ -11,9 +11,11 @@ import {
     TextSpan,
     Button,
     Paragraph,
-    Footer,
+    Loading
 } from "./styled";
+import { RatesDate } from "../DateTime";
 import LoadingScreen from "../Loading";
+
 
 const Form = () => {
     const [currency, setCurrency] = useState();
@@ -41,12 +43,13 @@ const Form = () => {
         <FieldSet>
             {ratesData.state === "loading"
             ? (
-                <LoadingScreen>Chwileczke...<br>Ładuję aktualne kursy walut z Europejskiego Banku Centralnego</br></LoadingScreen>
+                <Loading>Chwileczke...⏳  <strong>Ładuję aktualne kursy walut z Europejskiego Banku Centralnego ⏳ </strong>
+                <LoadingScreen /></Loading>
             )
             : (
                 ratesData.state === "error" ? (
                     <Failure>
-                        Kursy walut nie pobrały się. Sprawdź swoje połączenie internetowe
+                        Kursy walut nie pobrały się 😐 . Sprawdź swoje połączenie internetowe 😐
                     </Failure>
                 ) : (
                     <>
@@ -93,9 +96,8 @@ const Form = () => {
         </FieldSet>
         
             <div>
-                <Footer>
-                    Kursy aktualne na dzień {ratesData.date}
-                </Footer>
+                <RatesDate />
+
             </div>
     </StyledForm>
     );
