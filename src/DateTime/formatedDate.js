@@ -10,3 +10,12 @@ export const useFormatedDate = () =>{
       });
       return formatedDate;
 };
+export const useFormatedRatesDate = () =>{
+  const formatedRatesDate = (date) => date.toLocaleString(undefined, {
+      
+      day: "numeric",
+      month: "long",
+      year: "numeric",
+    });
+    return formatedRatesDate;
+};

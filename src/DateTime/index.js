@@ -1,5 +1,6 @@
 import { useCurrentDate } from "./useCurrentDate";
 import { useFormatedDate } from "./formatedDate";
+import { useFormatedRatesDate } from "./formatedDate";
 import { StyledDate } from "./styled";
 
 const Clock = () => {
@@ -7,7 +8,17 @@ const Clock = () => {
     const formatedDate = useFormatedDate();
     return (
       <StyledDate>
-        Dziś jest: 
+        Dziś jest:&nbsp;
+        {formatedDate(date)}
+      </StyledDate>
+    );
+  };
+ export const RatesDate = () => {
+    const date = useCurrentDate();
+    const formatedDate = useFormatedRatesDate();
+    return (
+      <StyledDate>
+        Kursy walut aktualne na dzień:&nbsp;
         {formatedDate(date)}
       </StyledDate>
     );
